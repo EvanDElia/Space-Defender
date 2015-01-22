@@ -3,6 +3,7 @@ var enemiesSpawned = 0;
 var enemyArray = [];
 var position = 0;
 var hearts = 5;
+var win = false;
 var finished = false;
 var currentLevel = 1;
 var score = 0;
@@ -13,6 +14,9 @@ var map = []; // Or you could call it "key"
 onkeydown = onkeyup = function(e){
     e = e || event; // to deal with IE
     map[e.keyCode] = e.type == 'keydown';
+	if (event.keyCode === 32) {
+        event.preventDefault();
+    }
     /*insert conditional here*/
 }
 var c = document.getElementById("myCanvas");
@@ -135,13 +139,16 @@ if (!paused){
 	ctx.font="12px Georgia";
 	ctx.fillText("Score: " + score,200, 148); 
 }
-if (hearts == 0){
-	ctx.font="33px Georgia";
-	ctx.fillText("Game Over",80, 100); 
+if (finished  && hearts != 0){
+	win = true;
 }
-else if (finished){
+if (win){
 	ctx.font="33px Georgia";
 	ctx.fillText("You win",80, 100);
+}
+else if (hearts == 0){
+	ctx.font="33px Georgia";
+	ctx.fillText("Game Over",80, 100); 
 }
 else if (paused){
 	ctx.font="33px Georgia";
