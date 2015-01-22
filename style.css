@@ -1,7 +1,7 @@
 body{
 	margin:8px;
 	background-image: url("space.png");
-    	background-repeat: repeat-y repeat-x;
+    background-repeat: repeat-y repeat-x;
 	background-position: center;
 }
 audio{
@@ -20,6 +20,15 @@ audio{
 	width: 50%;
 }
 #page-container{
-	background-color: #FFF;
 	padding: 5px;	
+}
+#explanation{
+	background-color: #000;
+	color: #FFF;
+	padding: 10px;
+}
+h1{
+	background-color: #000;
+	color: #FFF;
+	padding: 5px;
 }

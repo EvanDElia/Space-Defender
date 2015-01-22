@@ -14,6 +14,9 @@ var map = []; // Or you could call it "key"
 onkeydown = onkeyup = function(e){
     e = e || event; // to deal with IE
     map[e.keyCode] = e.type == 'keydown';
+	if (event.keyCode === 32) {
+        event.preventDefault();
+    }
     /*insert conditional here*/
 }
 var c = document.getElementById("myCanvas");
